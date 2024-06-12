@@ -1,0 +1,99 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr615_divisionmasters",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr615_divisionmaster",
+    "MaxGetRowsCount": 500,
+    "Name": "Division Masters",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "所有者",
+      "cr615_BuildingOwnerMaster": "Building Owner Master",
+      "cr615_buildingownermaster_DivisionKey_cr615_divisionmaster": "Building Owner Masters",
+      "cr615_departmentaddress": "Department Address",
+      "cr615_departmentname": "Department Name",
+      "cr615_divisionid": "Division ID",
+      "cr615_divisionmaster_AsyncOperations": "システム ジョブ ",
+      "cr615_divisionmaster_BulkDeleteFailures": "一括削除の失敗 ",
+      "cr615_divisionmaster_MailboxTrackingFolders": "メールボックス自動追跡フォルダー",
+      "cr615_divisionmaster_PrincipalObjectAttributeAccesses": "フィールド共有 ",
+      "cr615_divisionmaster_ProcessSession": "プロセス セッション",
+      "cr615_divisionmaster_SyncErrors": "同期エラー",
+      "cr615_divisionmasterid": "Division Master",
+      "createdby": "作成者",
+      "createdon": "作成日",
+      "createdonbehalfby": "作成者 (代理)",
+      "importsequencenumber": "インポート シーケンス番号",
+      "modifiedby": "修正者",
+      "modifiedon": "修正日",
+      "modifiedonbehalfby": "修正者 (代理)",
+      "overriddencreatedon": "レコード作成日",
+      "owningbusinessunit": "所属部署",
+      "owningteam": "所有チーム",
+      "owninguser": "所有ユーザー",
+      "statecode": "状態",
+      "statuscode": "ステータス",
+      "timezoneruleversionnumber": "タイム ゾーン規則のバージョン番号",
+      "utcconversiontimezonecode": "UTC 変換タイム ゾーン コード",
+      "versionnumber": "バージョン番号"
+    },
+    "PreferredName": "Division Masters",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Division Masters (ビュー)",
+    "Name": "_cr615_divisionmaster_views",
+    "RelatedEntityName": "Division Masters",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "052934e3-f74a-4f3f-8909-7bd536ec549c": "Division Master関連ビュー",
+      "2e834e41-1147-4ec5-a91d-06b4b91d75b7": "Division Masterの高度な検索ビュー",
+      "5691b4ab-a0cc-46ac-bd2e-b09e59ff5b96": "非アクティブなDivision Masters",
+      "989aeb38-2628-4dbf-93d4-9c904b205f1b": "アクティブなDivision Masters",
+      "e21990d0-af1d-4f52-ae38-29cc29d484a2": "Division Master検索ダイアログ ビュー"
+    }
+  },
+  {
+    "DisplayName": "状態 (Division Masters)",
+    "Name": "cr615_divisionmaster_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "アクティブ",
+      "1": "非アクティブ"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Division Masters"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Division Masters",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "ステータス (Division Masters)",
+    "Name": "cr615_divisionmaster_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "アクティブ",
+      "2": "非アクティブ"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Division Masters"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Division Masters",
+    "Type": "OptionSetInfo"
+  }
+]

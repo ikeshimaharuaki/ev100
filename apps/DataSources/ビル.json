@@ -1,0 +1,185 @@
+[
+  {
+    "DisplayName": "ビル (ビュー)",
+    "Name": "_cr615_building_views",
+    "RelatedEntityName": "ビル",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "0736aa30-314f-4fd7-b2b5-5cf786ef607e": "ビル関連ビュー",
+      "5f7c4d33-d30c-479a-8c17-8b002ca44ffb": "非アクティブなビル",
+      "80a83aa4-e6d2-414b-a544-48f9f70562a7": "ビル検索ダイアログ ビュー",
+      "c11d5bad-a38e-44ee-b9cc-314a533914d9": "アクティブなビル",
+      "c7bf7a23-a3b0-447d-8a46-53b1d2d4895a": "ビルの高度な検索ビュー"
+    }
+  },
+  {
+    "DisplayName": "BuildingType (ビル)",
+    "Name": "cr615_building_cr615_buildingtype",
+    "OptionSetInfoNameMapping": {
+      "0": "事務ビル"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr615_buildingtype",
+        "OptionSetReferenceEntityName": "ビル"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr615_buildingtype",
+    "RelatedEntityName": "ビル",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Enable (ビル)",
+    "Name": "cr615_building_cr615_enable",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr615_enable",
+        "OptionSetReferenceEntityName": "ビル"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr615_enable",
+    "RelatedEntityName": "ビル",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "ReceivingType (ビル)",
+    "Name": "cr615_building_cr615_receivingtype",
+    "OptionSetInfoNameMapping": {
+      "0": "1"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr615_receivingtype",
+        "OptionSetReferenceEntityName": "ビル"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr615_receivingtype",
+    "RelatedEntityName": "ビル",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "状態 (ビル)",
+    "Name": "cr615_building_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "アクティブ",
+      "1": "非アクティブ"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "ビル"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "ビル",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "ステータス (ビル)",
+    "Name": "cr615_building_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "アクティブ",
+      "2": "非アクティブ"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "ビル"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "ビル",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr615_buildings",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr615_building",
+    "Name": "ビル",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "所有者",
+      "cr615_address": "Address",
+      "cr615_addressincharge": "AddressInCharge",
+      "cr615_area": "Area",
+      "cr615_building_AsyncOperations": "システム ジョブ ",
+      "cr615_building_BulkDeleteFailures": "一括削除の失敗 ",
+      "cr615_building_DuplicateBaseRecord": "レコードの重複  (cr615_building_DuplicateBaseRecord)",
+      "cr615_building_DuplicateMatchingRecord": "レコードの重複  (cr615_building_DuplicateMatchingRecord)",
+      "cr615_building_MailboxTrackingFolders": "メールボックス自動追跡フォルダー",
+      "cr615_building_PrincipalObjectAttributeAccesses": "フィールド共有 ",
+      "cr615_building_ProcessSession": "プロセス セッション",
+      "cr615_building_SyncErrors": "同期エラー",
+      "cr615_buildingid": "ビル",
+      "cr615_buildingkana": "BuildingKana",
+      "cr615_buildingname": "BuildingName",
+      "cr615_buildingownerid": "BuildingOwnerId",
+      "cr615_buildingtype": "BuildingType",
+      "cr615_companynameincharge": "CompanyNameInCharge",
+      "cr615_contactnameincharge": "ContactNameInCharge",
+      "cr615_contactno": "ContactNo",
+      "cr615_departmentnameincharge": "DepartmentNameInCharge",
+      "cr615_electricbill": "ElectricBill",
+      "cr615_electricbill_base": "ElectricBill (基本)",
+      "cr615_emailincharge": "EmailInCharge",
+      "cr615_enable": "Enable",
+      "cr615_fee": "Fee",
+      "cr615_fee_base": "Fee (基本)",
+      "cr615_id": "Id",
+      "cr615_postalcode": "PostalCode",
+      "cr615_postalcodeincharge": "PostalCodeInCharge",
+      "cr615_receivingtype": "ReceivingType",
+      "cr615_shortbuildingname": "ShortBuildingName",
+      "cr615_sitemapurl": "SiteMapURL",
+      "cr615_telincharge": "TelInCharge",
+      "cr615_unitfee": "UnitFee",
+      "cr615_unitfee_base": "UnitFee (基本)",
+      "cr615_unitusagefee": "UnitUsageFee",
+      "cr615_unitusagefee_base": "UnitUsageFee (基本)",
+      "cr615_usagefee": "UsageFee",
+      "cr615_usagefee_base": "UsageFee (基本)",
+      "createdby": "作成者",
+      "createdon": "作成日",
+      "createdonbehalfby": "作成者 (代理)",
+      "exchangerate": "為替レート",
+      "importsequencenumber": "インポート シーケンス番号",
+      "modifiedby": "修正者",
+      "modifiedon": "修正日",
+      "modifiedonbehalfby": "修正者 (代理)",
+      "overriddencreatedon": "レコード作成日",
+      "owningbusinessunit": "所属部署",
+      "owningteam": "所有チーム",
+      "owninguser": "所有ユーザー",
+      "statecode": "状態",
+      "statuscode": "ステータス",
+      "timezoneruleversionnumber": "タイム ゾーン規則のバージョン番号",
+      "transactioncurrencyid": "通貨",
+      "utcconversiontimezonecode": "UTC 変換タイム ゾーン コード",
+      "versionnumber": "バージョン番号"
+    },
+    "PreferredName": "ビル",
+    "Type": "NativeCDSDataSourceInfo"
+  }
+]

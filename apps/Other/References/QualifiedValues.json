@@ -1,0 +1,52 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_cr615_buildingownermaster_forms",
+      "Namespace": "Building Owner Masters (フォーム)",
+      "Values": {
+        "情報": "f6e1fa3b-72e3-47ca-b3cf-e0d3b9fc42a5"
+      }
+    },
+    {
+      "Kind": "default.cds_cr615_divisionmaster_forms",
+      "Namespace": "Division Masters (フォーム)",
+      "Values": {
+        "情報": "b2d3fae9-3b1e-4885-9590-84c3246b6d44"
+      }
+    },
+    {
+      "Kind": "default.cds_systemuser_forms",
+      "Namespace": "ユーザー  (フォーム)",
+      "Values": {
+        "アプリケーション ユーザー": "d26924ef-4d80-46f7-ab1d-e6ae80a54ce8",
+        "ユーザー": "c2cd9e55-d4b4-4b55-9951-16ead79643e5",
+        "ユーザー フォーム – ビジネス": "c2413504-7eb2-4c59-a087-95d819866114",
+        "ユーザー階層のタイル フォーム": "c68d6c09-d7a7-4959-8d0f-44b8cff9b452",
+        "情報": "094fb08a-77bb-49e0-b7ea-8dbddfd01294"
+      }
+    },
+    {
+      "Kind": "default.cds_cr615_table_forms",
+      "Namespace": "部署マスタ (フォーム)",
+      "Values": {
+        "情報": "4b221334-7264-4981-bba5-6bae192ae3ab"
+      }
+    },
+    {
+      "Kind": "default.cds_cr615_building_forms",
+      "Namespace": "ビル (フォーム)",
+      "Values": {
+        "情報": "7655d507-aeef-4921-972d-4f59774f56b8"
+      }
+    },
+    {
+      "Kind": "default.cds_team_forms",
+      "Namespace": "チーム  (フォーム)",
+      "Values": {
+        "Team": "7ba7fac1-1418-4335-935f-f7f8dfd73fcc",
+        "チーム フォーム – ビジネス": "4aabf594-b30a-490d-bf97-89c67c6777fe",
+        "情報": "f5cfab6a-d4c2-4519-b68f-6e7485432e29"
+      }
+    }
+  ]
+}

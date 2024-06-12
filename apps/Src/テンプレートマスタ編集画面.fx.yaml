@@ -1,0 +1,375 @@
+テンプレートマスタ編集画面 As screen:
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+
+    Component_Menu_Template_MasterEdit As Component_Common:
+        Visible: =menu
+        Y: =Max(App.Height, App.MinScreenHeight) / 10
+        ZIndex: =10
+
+    BodyGroup_Template_MasterEdit As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =14
+
+        Body_Template_MasterEdit As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(187, 221, 140, 1)
+            Height: =Max(App.Height, App.MinScreenHeight)*9/10
+            Width: =Max(App.Width, App.MinScreenWidth)
+            X: =App.Width - App.Width
+            Y: =Max(App.Height, App.MinScreenHeight)/10
+            ZIndex: =6
+
+        EditForm_Template_MasterEdit As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(161, 159, 157, 1)
+            Fill: =RGBA(232, 244, 217, 1)
+            FocusedBorderThickness: =4
+            Height: =Max(App.Height, App.MinScreenHeight)/1.2
+            Width: =Max(App.Width, App.MinScreenWidth) - Max(App.Height, App.MinScreenHeight)/30*2
+            X: =Max(App.Height, App.MinScreenHeight)/30
+            Y: =Max(App.Height, App.MinScreenHeight)/10 + Max(App.Height, App.MinScreenHeight)/30
+            ZIndex: =7
+
+        Form_Template_MasterEdit As form:
+            BorderColor: =RGBA(245, 245, 245, 1)
+            DataSource: =部署マスタ
+            DefaultMode: =gblFormMode
+            Height: =EditForm_Template_MasterEdit.Height
+            Item: =gblSelectedItem
+            Width: =EditForm_Template_MasterEdit.Width
+            X: =EditForm_Template_MasterEdit.X
+            Y: =EditForm_Template_MasterEdit.Y
+            ZIndex: =8
+
+            部署ID_DataCard2_4 As typedDataCard.textualEditCard:
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr615_id"
+                Default: =ThisItem.部署ID
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@部署マスタ],DataSourceInfo.DisplayName,cr615_id)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                MaxLength: =DataSourceInfo([@部署マスタ], DataSourceInfo.MaxLength, cr615_id)
+                Required: =false
+                Update: =DataCardValue3_4.Text
+                Width: =266
+                X: =0
+                Y: =0
+                ZIndex: =4
+
+                DataCardKey3_4 As label:
+                    AutoHeight: =true
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =34
+                    PaddingLeft: =0
+                    Size: =13
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue3_4 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    Default: =Parent.Default
+                    DelayOutput: =true
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    DisabledFill: =RGBA(242, 242, 241, 0)
+                    DisplayMode: =Parent.DisplayMode
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    HoverBorderColor: =RGBA(16, 110, 190, 1)
+                    HoverColor: =RGBA(50, 49, 48, 1)
+                    HoverFill: =RGBA(255, 255, 255, 1)
+                    MaxLength: =Parent.MaxLength
+                    PaddingLeft: =5
+                    PressedBorderColor: =RGBA(0, 120, 212, 1)
+                    PressedColor: =RGBA(50, 49, 48, 1)
+                    PressedFill: =RGBA(255, 255, 255, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =13
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey3_4.Y + DataCardKey3_4.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage3_4 As label:
+                    AutoHeight: =true
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(168, 0, 0, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(168, 0, 0, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =13
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue3_4.Y + DataCardValue3_4.Height
+                    ZIndex: =3
+
+                StarVisible3_4 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =DataCardKey3_4.Height
+                    PaddingLeft: =0
+                    Size: =13
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey3_4.Y
+                    ZIndex: =4
+
+            部署名_DataCard2_4 As typedDataCard.textualEditCard:
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr615_businessdepartmentname"
+                Default: =ThisItem.部署名
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@部署マスタ],DataSourceInfo.DisplayName,cr615_businessdepartmentname)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                MaxLength: =DataSourceInfo([@部署マスタ], DataSourceInfo.MaxLength, cr615_businessdepartmentname)
+                Required: =false
+                Update: =DataCardValue4_4.Text
+                Width: =266
+                X: =1
+                Y: =0
+                ZIndex: =4
+
+                DataCardKey4_4 As label:
+                    AutoHeight: =true
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =34
+                    PaddingLeft: =0
+                    Size: =13
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue4_4 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    Default: =Parent.Default
+                    DelayOutput: =true
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    DisabledFill: =RGBA(242, 242, 241, 0)
+                    DisplayMode: =Parent.DisplayMode
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    HoverBorderColor: =RGBA(16, 110, 190, 1)
+                    HoverColor: =RGBA(50, 49, 48, 1)
+                    HoverFill: =RGBA(255, 255, 255, 1)
+                    MaxLength: =Parent.MaxLength
+                    PaddingLeft: =5
+                    PressedBorderColor: =RGBA(0, 120, 212, 1)
+                    PressedColor: =RGBA(50, 49, 48, 1)
+                    PressedFill: =RGBA(255, 255, 255, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =13
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey4_4.Y + DataCardKey4_4.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage4_4 As label:
+                    AutoHeight: =true
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(168, 0, 0, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(168, 0, 0, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =13
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue4_4.Y + DataCardValue4_4.Height
+                    ZIndex: =3
+
+                StarVisible4_4 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =DataCardKey4_4.Height
+                    PaddingLeft: =0
+                    Size: =13
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey4_4.Y
+                    ZIndex: =4
+
+        Submit_Template_MasterEdit As button:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            DisabledFill: =RGBA(242, 242, 241, 0)
+            Fill: =RGBA(54, 176, 75, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(16, 110, 190, 1)
+            OnSelect: |-
+                =SubmitForm(Form_Template_MasterEdit);
+                Navigate(ビル検索画面);
+            PressedBorderColor: =RGBA(0, 69, 120, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(16, 110, 190, 1)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =15
+            Text: ="登録"
+            X: =EditForm_Template_MasterEdit.Width - Submit_Template_MasterEdit.Width
+            Y: =Max(App.Height, App.MinScreenHeight) - EditForm_Template_MasterEdit.Y
+            ZIndex: =9
+
+    HeaderGroup_Template_MasterEdit As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =18
+
+        Header_Template_MasterEdit As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(127, 178, 57, 1)
+            Height: =Max(App.Height, App.MinScreenHeight)/10
+            Width: =Max(App.Width, App.MinScreenWidth)
+            X: =App.Width - App.Width
+            Y: =App.Height - App.Height
+            ZIndex: =1
+
+        Menu_Template_MasteEdit As icon.Hamburger:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =Max(App.Height, App.MinScreenHeight)/20
+            Icon: =Icon.Hamburger
+            OnSelect: =Set(menu, Not(menu));
+            Width: =Max(App.Height, App.MinScreenHeight)/20
+            X: =Max(App.Height, App.MinScreenHeight)/30
+            Y: =Max(App.Height, App.MinScreenHeight)/40
+            ZIndex: =2
+
+        ScreenName_Template_MasteEdit As label:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =Max(App.Height, App.MinScreenHeight)/20
+            PaddingBottom: =20
+            PaddingLeft: =20
+            PaddingRight: =20
+            PaddingTop: =20
+            Size: =15
+            Text: =App.ActiveScreen.Name
+            Width: =Max(App.Width, App.MinScreenWidth)/5
+            X: =Max(App.Height, App.MinScreenHeight)/10
+            Y: =Max(App.Height, App.MinScreenHeight)/40
+            ZIndex: =3
+
+        Notification_Template_MasteEdit As icon.Bell:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =Max(App.Height, App.MinScreenHeight)/30
+            Icon: =Icon.Bell
+            Width: =Max(App.Height, App.MinScreenHeight)/30
+            X: =Max(App.Width, App.MinScreenWidth) - UserName_Template_MasterEdit.Width - Notification_Template_MasteEdit.Width * 2
+            Y: =Max(App.Height, App.MinScreenHeight)/30
+            ZIndex: =4
+
+        UserName_Template_MasterEdit As label:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =Max(App.Height, App.MinScreenHeight)/20
+            Size: =13
+            Text: ="ログインユーザ：" & User().FullName
+            Width: =Max(App.Width, App.MinScreenHeight)/8
+            X: =Max(App.Width, App.MinScreenWidth) - UserName_Template_MasterEdit.Width
+            Y: =Max(App.Height, App.MinScreenHeight)/40
+            ZIndex: =5
+

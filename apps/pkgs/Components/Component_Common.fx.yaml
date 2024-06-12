@@ -1,0 +1,157 @@
+Component_Common As CanvasComponent:
+    button: =true
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =Max(App.Height, App.MinScreenHeight) - Max(App.Height, App.MinScreenHeight)/10
+    OnReset: =Set(menu, false);
+    Top: =App.ActiveScreen
+    Width: =Max(App.Width, App.MinScreenWidth)
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Group_Menu As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =14
+
+        Side As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(127, 178, 57, 1)
+            Height: =Max(App.Height, App.MinScreenHeight)*9/10
+            Visible: =menu
+            Width: =Max(App.Width, App.MinScreenWidth)/5
+            X: =App.Width - App.Width
+            Y: =App.Height - App.Height
+            ZIndex: =8
+
+        Label_Top As label:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =Max(App.Height, App.MinScreenHeight)/20
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(99, 139, 44, 0.5)
+            OnSelect: =Navigate(Component_Common.Top)
+            PaddingLeft: =20
+            Size: =13
+            Text: ="トップ"
+            Visible: =menu
+            Width: =Max(App.Width, App.MinScreenWidth)/5
+            X: =App.Width - App.Width
+            Y: =App.Height - App.Height
+            ZIndex: =9
+
+        Label_MasterList As label:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =Max(App.Height, App.MinScreenHeight)/20
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(99, 139, 44, 0.5)
+            PaddingLeft: =20
+            Size: =13
+            Text: ="マスタデータ"
+            Visible: =menu
+            Width: =Max(App.Width, App.MinScreenWidth)/5
+            X: =App.Width - App.Width
+            Y: =App.Height - App.Height + Label_Top.Height
+            ZIndex: =10
+
+        Label_MasterList_1 As label:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =Max(App.Height, App.MinScreenHeight)/20
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(99, 139, 44, 0.5)
+            PaddingLeft: =20
+            Size: =13
+            Text: ="　マスタデータ1"
+            Visible: =menu
+            Width: =Max(App.Width, App.MinScreenWidth)/5
+            X: =App.Width - App.Width
+            Y: =Label_MasterList.Y + Label_MasterList.Height
+            ZIndex: =11
+
+        Label_MasterList_2 As label:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =Max(App.Height, App.MinScreenHeight)/20
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(99, 139, 44, 0.5)
+            PaddingLeft: =20
+            Size: =13
+            Text: ="　マスタデータ2"
+            Visible: =menu
+            Width: =Max(App.Width, App.MinScreenWidth)/5
+            X: =App.Width - App.Width
+            Y: =Label_MasterList_1.Y + Label_MasterList_1.Height
+            ZIndex: =12
+
+        Label_MasterList_3 As label:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =Max(App.Height, App.MinScreenHeight)/20
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(99, 139, 44, 0.5)
+            PaddingLeft: =20
+            Size: =13
+            Text: ="　マスタデータ3"
+            Visible: =menu
+            Width: =Max(App.Width, App.MinScreenWidth)/5
+            X: =App.Width - App.Width
+            Y: =Label_MasterList_2.Y + Label_MasterList_2.Height
+            ZIndex: =13
+
+        Label_Export As label:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =Max(App.Height, App.MinScreenHeight)/20
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(99, 139, 44, 0.5)
+            PaddingLeft: =20
+            Size: =13
+            Text: ="データ出力"
+            Visible: =menu
+            Width: =Max(App.Width, App.MinScreenWidth)/5
+            X: =App.Width - App.Width
+            Y: =Label_MasterList_3.Y + Label_MasterList_3.Height
+            ZIndex: =14
+
+        Label_Setting As label:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =Max(App.Height, App.MinScreenHeight)/20
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(99, 139, 44, 0.5)
+            PaddingLeft: =20
+            Size: =13
+            Text: ="設定"
+            Visible: =menu
+            Width: =Max(App.Width, App.MinScreenWidth)/5
+            X: =App.Width - App.Width
+            Y: =Label_Export.Y + Label_Export.Height
+            ZIndex: =15
+
+        Label_VersionInfo As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =Max(App.Height, App.MinScreenHeight)/20
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(99, 139, 44, 0.5)
+            Size: =13
+            Text: ="ver 1.0.0"
+            Visible: =menu
+            Width: =Max(App.Width, App.MinScreenWidth)/5
+            X: =App.Width - App.Width
+            Y: =Side.Height - Label_VersionInfo.Height
+            ZIndex: =16
+

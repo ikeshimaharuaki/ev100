@@ -1,0 +1,356 @@
+事業部マスタ検索画面 As screen:
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+
+    Component_Menu_Template_MasterSearch_1 As Component_Common:
+        Visible: =menu
+        Y: =Max(App.Height, App.MinScreenHeight) / 10
+        ZIndex: =17
+
+    HeaderGroup_Template_MasterSearch_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =18
+
+        Header_Template_MasterSearch_1 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(127, 178, 57, 1)
+            Height: =Max(App.Height, App.MinScreenHeight)/10
+            Width: =Max(App.Width, App.MinScreenWidth)
+            ZIndex: =1
+
+        Menu_Template_MasteSearch_1 As icon.Hamburger:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =Max(App.Height, App.MinScreenHeight)/20
+            Icon: =Icon.Hamburger
+            OnSelect: =Set(menu, Not(menu));
+            Width: =Max(App.Height, App.MinScreenHeight)/20
+            X: =Max(App.Height, App.MinScreenHeight)/30
+            Y: =Max(App.Height, App.MinScreenHeight)/40
+            ZIndex: =3
+
+        ScreenName_Template_MasteSearch_1 As label:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =Max(App.Height, App.MinScreenHeight)/20
+            PaddingBottom: =20
+            PaddingLeft: =20
+            PaddingRight: =20
+            PaddingTop: =20
+            Size: =15
+            Text: =App.ActiveScreen.Name
+            Width: =Max(App.Width, App.MinScreenWidth)/5
+            X: =Max(App.Height, App.MinScreenHeight)/10
+            Y: =Max(App.Height, App.MinScreenHeight)/40
+            ZIndex: =4
+
+        Notification_Template_MasteSearch_1 As icon.Bell:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =Max(App.Height, App.MinScreenHeight)/30
+            Icon: =Icon.Bell
+            Width: =Max(App.Height, App.MinScreenHeight)/30
+            X: =Max(App.Width, App.MinScreenWidth) - UserName_Template_MasteSearch_1.Width - Notification_Template_MasteSearch_1.Width * 2
+            Y: =Max(App.Height, App.MinScreenHeight)/30
+            ZIndex: =5
+
+        UserName_Template_MasteSearch_1 As label:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =Max(App.Height, App.MinScreenHeight)/20
+            Size: =13
+            Text: ="ログインユーザ：" & User().FullName
+            Width: =Max(App.Width, App.MinScreenHeight)/8
+            X: =Max(App.Width, App.MinScreenWidth) - UserName_Template_MasteSearch_1.Width
+            Y: =Max(App.Height, App.MinScreenHeight)/40
+            ZIndex: =6
+
+    BodyGroup_Template_MasterSearch_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =18
+
+        Body_Template_MasterSearch_1 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(187, 221, 140, 1)
+            Height: =Max(App.Height, App.MinScreenHeight)*9/10
+            Width: =Max(App.Width, App.MinScreenWidth)
+            Y: =Max(App.Height, App.MinScreenHeight)/10
+            ZIndex: =2
+
+        SearchForm_Template_MasterSearch_1 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(161, 159, 157, 1)
+            Fill: =RGBA(232, 244, 217, 1)
+            FocusedBorderThickness: =4
+            Height: =Label_Search1_Template_MasterSearch_1.Height +20
+            Width: =Max(App.Width, App.MinScreenWidth) - Max(App.Height, App.MinScreenHeight)/30*2
+            X: =Max(App.Height, App.MinScreenHeight)/30
+            Y: =Max(App.Height, App.MinScreenHeight)/10 + Max(App.Height, App.MinScreenHeight)/30
+            ZIndex: =7
+
+        ResultForm_Template_MasterSearch_1 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =1
+            DisabledFill: =RGBA(161, 159, 157, 1)
+            Fill: =RGBA(232, 244, 217, 1)
+            FocusedBorderThickness: =4
+            Height: =Max(App.Height, App.MinScreenHeight) - SearchForm_Template_MasterSearch_1.Y - SearchForm_Template_MasterSearch_1.Height - Max(App.Height, App.MinScreenHeight)/15
+            Width: =Max(App.Width, App.MinScreenWidth) - Max(App.Height, App.MinScreenHeight)/30*2
+            X: =Max(App.Height, App.MinScreenHeight)/30
+            Y: =Max(App.Height, App.MinScreenHeight)/10 + Max(App.Height, App.MinScreenHeight)/30*2 + SearchForm_Template_MasterSearch_1.Height
+            ZIndex: =8
+
+        Label_Search1_Template_MasterSearch_1 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(50, 49, 48, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            PaddingLeft: =10
+            Size: =13
+            Text: ="部署ID"
+            X: =SearchForm_Template_MasterSearch_1.X
+            Y: =SearchForm_Template_MasterSearch_1.Y + 10
+            ZIndex: =9
+
+        TextInput_Search1_Template_MasterSearch_1 As text:
+            BorderColor: =RGBA(245, 245, 245, 1)
+            BorderThickness: =2
+            Color: =RGBA(50, 49, 48, 1)
+            Default: =""
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            DisabledFill: =RGBA(242, 242, 241, 0)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            HoverBorderColor: =RGBA(16, 110, 190, 1)
+            HoverColor: =RGBA(50, 49, 48, 1)
+            HoverFill: =RGBA(255, 255, 255, 1)
+            PressedBorderColor: =RGBA(0, 120, 212, 1)
+            PressedColor: =RGBA(50, 49, 48, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =13
+            X: =SearchForm_Template_MasterSearch_1.X + Label_Search1_Template_MasterSearch_1.Width
+            Y: =SearchForm_Template_MasterSearch_1.Y + 10
+            ZIndex: =10
+
+        Label_Search2_Template_MasterSearch_1 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(50, 49, 48, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            PaddingLeft: =10
+            Size: =13
+            Text: ="部署名"
+            X: =TextInput_Search1_Template_MasterSearch_1.X + TextInput_Search1_Template_MasterSearch_1.Width
+            Y: =SearchForm_Template_MasterSearch_1.Y + 10
+            ZIndex: =11
+
+        TextInput_Search2_Template_MasterSearch_1 As text:
+            BorderColor: =RGBA(245, 245, 245, 1)
+            BorderThickness: =2
+            Color: =RGBA(50, 49, 48, 1)
+            Default: =""
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            DisabledFill: =RGBA(242, 242, 241, 0)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            HoverBorderColor: =RGBA(16, 110, 190, 1)
+            HoverColor: =RGBA(50, 49, 48, 1)
+            HoverFill: =RGBA(255, 255, 255, 1)
+            PressedBorderColor: =RGBA(0, 120, 212, 1)
+            PressedColor: =RGBA(50, 49, 48, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =13
+            X: =Label_Search2_Template_MasterSearch_1.X + Label_Search2_Template_MasterSearch_1.Width
+            Y: =SearchForm_Template_MasterSearch_1.Y + 10
+            ZIndex: =12
+
+        New_Template_MasterSearch_1 As button:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            DisabledFill: =RGBA(242, 242, 241, 0)
+            Fill: =RGBA(54, 176, 75, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            HoverBorderColor: =Self.Color
+            HoverFill: =RGBA(54, 176, 75, 0.5)
+            OnSelect: |-
+                =Set(gblFormMode,FormMode.New);
+                Navigate(テンプレートマスタ新規画面);
+            PressedBorderColor: =RGBA(54, 176, 75, 1)
+            PressedColor: =Self.Color
+            PressedFill: =RGBA(54, 176, 75, 0.5)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =15
+            Text: ="新規"
+            X: =SearchForm_Template_MasterSearch_1.Width - New_Template_MasterSearch_1.Width
+            Y: =Label_Search1_Template_MasterSearch_1.Y
+            ZIndex: =13
+
+        Label1_Template_MasterSearch_1 As label:
+            BorderThickness: =1
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            Fill: =RGBA(232, 244, 217, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =13
+            Text: ="部署ID"
+            X: =Max(App.Height, App.MinScreenHeight)/30
+            Y: =Max(App.Height, App.MinScreenHeight)/10 + Max(App.Height, App.MinScreenHeight)/30*2 + SearchForm_Template_MasterSearch_1.Height
+            ZIndex: =14
+
+        Label2_Template_MasterSearch_1 As label:
+            BorderThickness: =1
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            Fill: =RGBA(232, 244, 217, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =13
+            Text: ="部署名"
+            X: =Max(App.Height, App.MinScreenHeight)/30 + Label1_Template_MasterSearch_1.Width
+            Y: =Label1_Template_MasterSearch_1.Y
+            ZIndex: =15
+
+        "Gallery1_Template_MasterSearch_1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
+            BorderColor: =RGBA(245, 245, 245, 1)
+            DelayItemLoading: =true
+            Height: =ResultForm_Template_MasterSearch_1.Height - Label1_Template_MasterSearch_1.Height
+            Items: |-
+                =Filter(部署マスタ,
+                       IsBlank(TextInput_Search1_Template_MasterSearch_1.Text) || TextInput_Search1_Template_MasterSearch_1.Text in 部署ID,
+                       IsBlank(TextInput_Search2_Template_MasterSearch_1.Text) || TextInput_Search2_Template_MasterSearch_1.Text in 部署名
+                )
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplatePadding: =0
+            TemplateSize: =90
+            Width: =ResultForm_Template_MasterSearch_1.Width
+            X: =ResultForm_Template_MasterSearch_1.X
+            Y: =ResultForm_Template_MasterSearch_1.Y + Label1_Template_MasterSearch_1.Height
+            ZIndex: =16
+
+            Title1_2 As label:
+                Color: =RGBA(50, 49, 48, 1)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                Font: =Font.'Segoe UI'
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Label1_Template_MasterSearch_1.Height
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =12
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =15
+                Text: =ThisItem.部署ID
+                Width: =Label1_Template_MasterSearch_1.Width
+                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            Subtitle1_2 As label:
+                Color: =RGBA(96, 94, 92, 1)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                Font: =Font.'Segoe UI'
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Title1_2.Height
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =12
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =15
+                Text: =ThisItem.部署名
+                Width: =Title1_2.Width
+                X: =Title1_2.X + Title1_2.Width
+                Y: =Title1_2.Y
+                ZIndex: =2
+
+            NextArrow1_2 As icon.ChevronRight:
+                AccessibleLabel: =Self.Tooltip
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Color: =RGBA(166, 166, 166, 1)
+                DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                DisabledColor: =RGBA(225, 223, 221, 1)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =50
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =RGBA(16, 110, 190, 1)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Icon: =Icon.ChevronRight
+                OnSelect: |-
+                    =Set(gblSelectedItem,ThisItem);
+                    Set(gblFormMode,FormMode.View);
+                    Navigate(テンプレートマスタ表示画面);
+                PaddingBottom: =16
+                PaddingLeft: =16
+                PaddingRight: =16
+                PaddingTop: =16
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedColor: =RGBA(16, 110, 190, 1)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Tooltip: ="項目の詳細の表示"
+                Width: =50
+                X: =Parent.TemplateWidth - Self.Width - 12
+                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                ZIndex: =3
+
+            Separator1_2 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =4
+                OnSelect: =Select(Parent)
+                Width: =Parent.TemplateWidth
+                Y: =Parent.TemplateHeight - Self.Height
+                ZIndex: =4
+
+            Rectangle1_2 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Fill: =RGBA(0, 120, 212, 1)
+                Height: =Parent.TemplateHeight - Separator1_2.Height
+                OnSelect: =Select(Parent)
+                Visible: =ThisItem.IsSelected
+                Width: =4
+                ZIndex: =5
+
