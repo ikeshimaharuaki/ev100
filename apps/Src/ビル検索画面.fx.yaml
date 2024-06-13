@@ -87,7 +87,7 @@
             Fill: =RGBA(187, 221, 140, 1)
             Height: =Max(App.Height, App.MinScreenHeight)*9/10
             Width: =Max(App.Width, App.MinScreenWidth)
-            Y: =Max(App.Height, App.MinScreenHeight)/10
+            Y: =77
             ZIndex: =2
 
         SearchForm_Template_MasterSearch As rectangle:
@@ -255,6 +255,7 @@
             Text: |-
                 ="ビルオーナー
                 "
+            Width: =189
             X: =Max(App.Height, App.MinScreenHeight)/30 + Label1_Template_MasterSearch.Width
             Y: =Label1_Template_MasterSearch.Y
             ZIndex: =15
@@ -264,9 +265,11 @@
             DelayItemLoading: =true
             Height: =ResultForm_Template_MasterSearch.Height - Label1_Template_MasterSearch.Height
             Items: |-
-                =Filter(ビル ,
-                       IsBlank(TextInput_Search1_BuildingName.Text) || TextInput_Search1_BuildingName.Text in BuildingName,
-                       IsBlank(TextInput_Search2_BuildingOwner.Text) || TextInput_Search2_BuildingOwner.Text in BuildingOwnerId
+                =Filter(ビル,
+                   IsBlank(TextInput_Search1_BuildingName)||
+                   TextInput_Search1_BuildingName.Text in BuildingName,
+                   IsBlank(TextInput_Search2_BuildingOwner)||
+                   TextInput_Search2_BuildingOwner.Text in BuildingOwnerName
                 )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
@@ -291,7 +294,7 @@
                 Size: =15
                 Text: =ThisItem.BuildingName
                 Width: =Label1_Template_MasterSearch.Width
-                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                Y: =23
                 ZIndex: =1
 
             BuildingOwnerId As label:
@@ -306,7 +309,7 @@
                 PaddingRight: =0
                 PaddingTop: =0
                 Size: =15
-                Text: =ThisItem.BuildingOwnerId
+                Text: =ThisItem.BuildingOwnerName
                 Width: =BuildingName.Width
                 X: =BuildingName.X + BuildingName.Width
                 Y: =BuildingName.Y
@@ -359,4 +362,103 @@
                 Visible: =ThisItem.IsSelected
                 Width: =4
                 ZIndex: =5
+
+            PostalCode As label:
+                Color: =RGBA(50, 49, 48, 1)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                Font: =Font.'Segoe UI'
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Label1_Template_MasterSearch.Height
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =12
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =15
+                Text: =ThisItem.PostalCode
+                Width: =Label1_Template_MasterSearch.Width
+                X: =336
+                Y: =23
+                ZIndex: =6
+
+            Address As label:
+                Color: =RGBA(50, 49, 48, 1)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                Font: =Font.'Segoe UI'
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =12
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =15
+                Text: =ThisItem.Address
+                Width: =380
+                X: =486
+                Y: =23
+                ZIndex: =7
+
+            ContactName As label:
+                Color: =RGBA(50, 49, 48, 1)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                Font: =Font.'Segoe UI'
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Label1_Template_MasterSearch.Height
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =12
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =15
+                Text: =ThisItem.ContactNameInCharge
+                Width: =Label1_Template_MasterSearch.Width
+                X: =944
+                Y: =23
+                ZIndex: =8
+
+    Label1_Template_MasterSearch_2 As label:
+        BorderThickness: =1
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        Fill: =RGBA(232, 244, 217, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Size: =13
+        Text: ="郵便番号"
+        X: =364
+        Y: =188
+        ZIndex: =19
+
+    Label2_Template_MasterSearch_2 As label:
+        BorderThickness: =1
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        Fill: =RGBA(232, 244, 217, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Size: =13
+        Text: ="住所"
+        Width: =459
+        X: =516
+        Y: =Label1_Template_MasterSearch_2.Y
+        ZIndex: =20
+
+    Label1_Template_MasterSearch_3 As label:
+        BorderThickness: =1
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        Fill: =RGBA(232, 244, 217, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Size: =13
+        Text: ="担当者"
+        X: =976
+        Y: =188
+        ZIndex: =21
 

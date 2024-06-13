@@ -116,13 +116,13 @@
     "Id": "46d8f7b4-bc01-45cf-bdf7-e8dd33cddb18",
     "InstrumentationKey": "",
     "ManualOfflineProfileId": "",
-    "Name": "EV100",
+    "Name": "EV100 ikeshima",
     "OriginatingVersion": "1.342",
     "ParserErrorCount": 0,
     "ShowStatusBar": false
   },
   "PublishInfo": {
-    "AppName": "EV100",
+    "AppName": "EV100 ikeshima",
     "BackgroundColor": "RGBA(0,176,240,1)",
     "IconColor": "RGBA(255,255,255,1)",
     "IconName": "Edit",
